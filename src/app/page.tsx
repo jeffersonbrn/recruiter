@@ -8,11 +8,14 @@ import FormLogin from './components/form-login'
 
 export default function Home() {
   const formSchema = z.object({
-    username: z.string().email({
-      message: 'Username must be at least 2 characters'
+    email: z.string().email({
+      message: 'email must be a valid email address'
     }),
-    test: z.string().min(10, {
-      message: 'Deve ser aparecido'
+    password: z.string().min(8, {
+      message: 'the password must be at least 8 characters'
+    }),
+    country: z.string({
+      description: 'The country must be selected'
     })
   })
 
@@ -28,12 +31,12 @@ export default function Home() {
           </div>
           <div className='w-full bg-background rounded-md px-3 py-4 grid gap-10'>
             <div className='grid gap-4'>
-              <Button className='w-full h-20 justify-start'>
+              {/* <Button className='w-full h-20 justify-start'>
                 <Building2 className='mr-2 h-8 w-8' /> Quero encontrar o perfil ideal
               </Button>
               <Button variant='secondary' className='w-full h-20 justify-start'>
                 <User className='mr-2 h-8 w-8' /> Sou canditato
-              </Button>
+              </Button> */}
               
               <div className='grid mb'>
                 {/* <div className='grid grid-cols-1'>

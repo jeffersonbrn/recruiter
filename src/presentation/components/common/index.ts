@@ -1,1 +1,1 @@
-export * from './protocols/validation'
+export * from './protocols'
